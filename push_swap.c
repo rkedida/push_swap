@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 02:47:51 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/10 22:49:34 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/11 00:32:10 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	printer(t_list *tmp)
 	a = tmp;
 	while (a)
 	{
-		printf("[%d] -> [%d] || ", a->num, a->index);
+		printf("[%d] -> [%d] || ", a->num, a->i);
 		a = a->next;
 	}
 	printf("\n");
@@ -90,7 +90,7 @@ t_list	*ft_create_stack(int *indexarr, int count)
 		if (i < count - 1)
 			new_node->next = malloc(sizeof(t_list));
 		new_node->num = indexarr[i];
-		new_node->index = 0;
+		new_node->i = 0;
 		if (i == (count - 1))
 			new_node->next = NULL;
 		else
@@ -100,7 +100,7 @@ t_list	*ft_create_stack(int *indexarr, int count)
 	new_node = curr;
 	while (new_node)
 	{
-		new_node->index = get_index(new_node->num, curr);
+		new_node->i = get_index(new_node->num, curr);
 		new_node = new_node->next;
 	}
 	return (curr);
@@ -184,7 +184,7 @@ int main(int ac, char **av)
 		if (!parsing(type, ac, av))
 			ft_error();
 		ft_init_stacks(type);
-		sorting_algo(type);
+		sorting_algo(type, type->max_size);
 		printer(type->l_a);
 	}
 	return(0);

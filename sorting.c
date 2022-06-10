@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 21:26:00 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/10 23:16:50 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/11 00:54:45 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	is_sorted(t_struct *head)
 	l = head->l_a;
 	while (l && l->next)
 	{	
-		if (l->index == l->next->index - 1)
+		if (l->i == l->next->i - 1)
 			i++;
 		l = l->next;
 	}
@@ -46,13 +46,21 @@ int	is_sorted(t_struct *head)
 // 	return (1);
 // }
 
-void	sorting_algo(t_struct *head, int n)
+void	sorting_algo(t_struct *head, int size)
 {
-	int		i;
 	t_list	*tmp;
 
 	tmp = head->l_a;
 	if (is_sorted(head))
 		return ;
-	if (n == 3)
+	if (size == 3)
+	{
+		if (tmp->i > tmp->next->i && tmp->i == tmp->next->next->i - 1)
+			swap_a(head);
+		// else if (tmp->i > tmp->next && )
+		else if (tmp->i > tmp->next->i && tmp->next->i < tmp->next->next->i)
+			rotate_a(head);
+		else if (tmp->i < tmp->next->i && tmp->next->i > tmp->next->next->i +1)
+			reverse_rotate_a(head);
+	}
 }

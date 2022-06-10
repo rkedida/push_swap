@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 02:48:02 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/10 23:16:09 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/11 00:32:53 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 typedef struct s_list
 {
 	int				num;			//used in func check_string
-	int				index;			//used in func ordered
+	int				i;			//used in func ordered
 	struct s_list	*next;
 }						t_list;
 
@@ -34,7 +34,7 @@ typedef struct s_struct
 {
 	t_list	*l_a;
 	t_list	*l_b;
-	int		print;
+	// int		print;
 	int		*nbr;
 	// int		*indexing;
 	int		max_size;
@@ -83,7 +83,7 @@ void	push_b(t_struct *head);
 // functions in sorting.c
 
 // int		check_if_sorted(t_struct **head);
-void	sorting_algo(t_struct *head, int n);
+void	sorting_algo(t_struct *head, int size);
 int		is_sorted(t_struct *head);
 
 #endif
