@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 02:48:02 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/11 00:32:53 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/11 20:51:57 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ typedef struct s_struct
 {
 	t_list	*l_a;
 	t_list	*l_b;
-	// int		print;
 	int		*nbr;
-	// int		*indexing;
 	int		max_size;
-	int		value;
-	// int		data;
+	int		top_a;
+	int		top_b;
+	int		*tab_a;
+	int		*tab_b;
 }				t_struct;
 
 // functions in clear_error_functions.c
@@ -83,7 +83,11 @@ void	push_b(t_struct *head);
 // functions in sorting.c
 
 // int		check_if_sorted(t_struct **head);
-void	sorting_algo(t_struct *head, int size);
+void	sorting_algo_3n(t_struct *head, int size);
+void	sorting_algo_5n(t_struct *head, int size);
 int		is_sorted(t_struct *head);
+int		find_small_n(int size);
+int		find_big_n(int size);
+void	push_to_b(t_struct *head);
 
 #endif

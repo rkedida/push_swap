@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 02:47:51 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/11 00:32:10 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/11 20:52:49 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,17 +175,19 @@ int	parsing(t_struct *data, int ac, char **av)
 int main(int ac, char **av)
 {
 	t_struct	*type;
-	int			i;
 
-	i = 0;
 	type = malloc(sizeof(t_struct));
 	if (ac > 1)
 	{
 		if (!parsing(type, ac, av))
 			ft_error();
 		ft_init_stacks(type);
-		sorting_algo(type, type->max_size);
+		if (ac == 4)
+			sorting_algo_3n(type, type->max_size);
+		push_to_b(type);
+		// if (ac == 6)
+		// 	sorting_algo_5n(type, type->max_size);
 		printer(type->l_a);
 	}
-	return(0);
+	return (0);
 }
