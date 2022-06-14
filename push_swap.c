@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 02:47:51 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/11 20:52:49 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/13 16:11:00 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,18 @@ int	mod_atoi(char *str)
 			n = -1;
 		i++;
 	}
-	// if ((str[i] == '-' || str[i] == '+') && !ft_isdigit(str[i]))
-	// 	ft_error();
+	if ((str[i] == '-' || str[i] == '+') && !ft_isdigit(str[i]))
+		ft_error();
 	while (ft_isdigit(str[i]))
 	{
 		res *= 10;
 		res += str[i] - 48;
 		i++;
-		if ((n == 1 && res > 2147483647) || (n == -1 && res > -2147483648))
+		if ((n == 1 && res > 2147483647) || (n == -1 && res > 2147483648))
 			ft_error();
 	}
 	if (n == -1)
-		return ((int)(-res * n));
+		return ((int)(res * n));
 	return ((int)(res * n));
 }
 
@@ -175,19 +175,26 @@ int	parsing(t_struct *data, int ac, char **av)
 int main(int ac, char **av)
 {
 	t_struct	*type;
+	t_sort		*sort;
 
+	sort = NULL;
 	type = malloc(sizeof(t_struct));
 	if (ac > 1)
 	{
 		if (!parsing(type, ac, av))
 			ft_error();
 		ft_init_stacks(type);
-		if (ac == 4)
-			sorting_algo_3n(type, type->max_size);
-		push_to_b(type);
+		// if (ac == 4)
+		// 	call_algo_3n(type, 3);
+		// // push_to_b(type);
 		// if (ac == 6)
-		// 	sorting_algo_5n(type, type->max_size);
-		printer(type->l_a);
+		// 	call_algo_5n(type, type->max_size);
+		// printer(type->l_a);
+		// if (ac > 50)
+		// 	sorting_algo_100n(type);
+		if (ac > 50)
+			sorting_algo_500n(type);
+		// printer(type->l_a);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 02:48:17 by rkedida           #+#    #+#              #
-#    Updated: 2022/06/10 22:25:47 by rkedida          ###   ########.fr        #
+#    Updated: 2022/06/13 16:17:13 by rkedida          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ bonus: all
 
 $(NAME) : $(OBJS)
 	@make -C ./libft --silent
-	@$(CC) -o $(NAME) $(CFALG) $(OBJS) $(LIBFT)
+	@$(CC) -o $(NAME) $(CFLAG) $(OBJS) $(LIBFT)
 
 %.o : %.c
 	@$(CC) $(CFLAG) -c $^ -o $@ 

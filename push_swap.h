@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 02:48:02 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/11 20:51:57 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/15 00:51:02 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,22 @@ typedef struct s_list
 
 typedef struct s_struct
 {
-	t_list	*l_a;
-	t_list	*l_b;
-	int		*nbr;
-	int		max_size;
-	int		top_a;
-	int		top_b;
-	int		*tab_a;
-	int		*tab_b;
+	t_list		*l_a;
+	t_list		*l_b;
+	int			*nbr;
+	int			max_size;
 }				t_struct;
+
+typedef struct s_sort
+{
+	int			total;
+	int			i;
+	int			j;
+	int			k;
+	int			l;
+	int			m;
+	// t_struct	*tmp;
+}				t_sort;
 
 // functions in clear_error_functions.c
 
@@ -83,11 +90,30 @@ void	push_b(t_struct *head);
 // functions in sorting.c
 
 // int		check_if_sorted(t_struct **head);
-void	sorting_algo_3n(t_struct *head, int size);
-void	sorting_algo_5n(t_struct *head, int size);
+void	sorting_algo_3n(t_struct *head);
+void	call_algo_5n(t_struct *head, int size);
 int		is_sorted(t_struct *head);
-int		find_small_n(int size);
-int		find_big_n(int size);
-void	push_to_b(t_struct *head);
+void	sorting_algo_5n(t_struct *head);
+void	call_algo_3n(t_struct *head, int size);
+void	printer(t_list *tmp);
+// void	sorting_algo_500n(t_struct *head);
+void	sorting_algo_500n(t_struct *head);
+// void	prepare_push_to_b(t_struct *head, t_sort *sort, t_struct *tmp);
+// void	init_stack_var(t_sort *sort, t_struct *head);
+// void	find_biggest_element_j(t_struct *head, t_sort *sort);
+// void	find_biggest_element_j_2(t_struct *head, t_sort *sort);
+// void	push_b_to_a(t_struct *head, t_sort *sort);
+// void	push_b_to_a_2(t_struct *head, t_sort *sort);
+// void	prepare_part_2(t_struct *head);
+// void	prepare_part_3(t_struct *head, t_sort *sort, t_struct *tmp);
+
+t_sort	*init_stack_var(t_struct *head);
+void	prepare_push_to_b(t_struct *head, t_sort *sort, t_struct tmp);
+void	prepare_part_2(t_struct *head, t_sort *sort);
+void	prepare_part_3(t_struct *head, t_sort *sort);
+void	sorting_part_1(t_struct *head, t_sort *sort, t_struct tmp);
+void	sorting_part_2(t_struct *head, t_sort *sort);
+void	sorting_part_3(t_struct *head, t_sort *sort);
+void	sorting_part_4(t_struct *head, t_sort *sort, t_struct tmp);
 
 #endif
