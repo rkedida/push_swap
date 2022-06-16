@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 02:49:55 by rkedida           #+#    #+#             */
-/*   Updated: 2022/05/23 15:38:05 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/15 04:40:54 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ char	*ft_read_protect(int fd, char *protect)
 
 char	*get_next_line(int fd)
 {
-	static char	*protect[OPEN_MAX];
+	static char	*protect[1024];
 	char		*l;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)

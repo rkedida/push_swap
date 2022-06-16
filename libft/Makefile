@@ -6,7 +6,7 @@
 #    By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/27 12:27:08 by rkedida           #+#    #+#              #
-#    Updated: 2022/05/27 17:45:05 by rkedida          ###   ########.fr        #
+#    Updated: 2022/06/15 23:29:35 by rkedida          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ SRCS=	ft_atoi.c\
 OBJS=$(SRCS:.c=.o)
 
 CC = cc
-CFLAG = -Wall -Wextra -Werror
+CFLAG = -Wall -Wextra -Werror -g
 
 all: $(NAME)
 

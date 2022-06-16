@@ -6,13 +6,13 @@
 #    By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 02:48:17 by rkedida           #+#    #+#              #
-#    Updated: 2022/06/13 16:17:13 by rkedida          ###   ########.fr        #
+#    Updated: 2022/06/16 03:06:41 by rkedida          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
-INCLUDES	= 	-I./include
-LIBFT		= 	./libft/libft.a 
+NAME =			push_swap
+INCLUDES	=	-I./include
+LIBFT		=	./libft/libft.a 
 
 
 SRCS=	push_swap.c \
@@ -22,7 +22,12 @@ SRCS=	push_swap.c \
 		ra_rb_rr_operations.c \
 		stack_commands.c \
 		pa_pb_operations.c \
-		sorting.c \
+		sorting_1.c \
+		sorting_2.c \
+		sorting_3.c \
+		call_sort_algos.c \
+		utils.c \
+		parsing.c 
 
 OBJS=$(SRCS:.c=.o)
 
