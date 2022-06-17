@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 13:54:52 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/17 17:11:27 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/17 18:34:05 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ int	parsing(t_struct *data, int ac, char **av)
 	i = 0;
 	j = 0;
 	check_doubles(av, ac, data);
-	printf("av[0] = %s   %s\n", av[0], av[1]);
 	tmp = malloc((sizeof(int) * ac));
 	while (i < ac)
 	{
