@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 02:48:02 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/17 03:00:18 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/17 17:52:19 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 
 # define TRUE	1
 # define FALSE	0
-
-// circula linked list NODE
 
 typedef struct s_list
 {

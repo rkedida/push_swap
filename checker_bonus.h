@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 03:00:38 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/17 04:37:43 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/17 17:43:30 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,6 @@ void			push_b(t_struct *head);
 int				is_sorted(t_struct *head);
 void			checker(t_struct *head);
 void			actions(char *tmp, t_struct *head);
-void			new_line_remove(char *line);
-void			ft_action_processing(char *line, t_list *head, t_struct	*top);
 void			ft_read_action(t_list *head);
 
 #endif

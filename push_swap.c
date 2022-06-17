@@ -6,24 +6,11 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 02:47:51 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/17 02:31:16 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/17 17:48:44 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	printer(t_list *tmp)
-{
-	t_list	*a;
-
-	a = tmp;
-	while (a)
-	{
-		printf("[%d] -> [%d] || ", a->num, a->i);
-		a = a->next;
-	}
-	printf("\n");
-}
 
 int	main(int ac, char **av)
 {

@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 13:54:52 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/17 03:09:38 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/17 17:40:45 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,8 @@ void	check_doubles(char **av, int ac, t_struct *head)
 		j = i + 1;
 		while (j < ac)
 		{
-			if (ft_strcmp(av[i], av[j]) == 0)
+			if ((ft_strcmp(av[i], av[j]) == 0)
+				|| (ft_atoi(av[i]) == ft_atoi(av[j])))
 				error(head, 1);
 			j++;
 		}

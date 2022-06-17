@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:01:37 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/17 07:00:22 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/17 17:39:42 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,20 +59,6 @@ unsigned int	ft_get_nb_strs(char const *s, char c)
 		nb_strs++;
 	return (nb_strs);
 }
-
-// int	space_counter(char *str)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (str[i] != '\0')
-// 	{
-// 		if (str[i] == ' ' && str[i + 1] == ' ' && ft_isdigit(str[i + 2]))
-// 			return (TRUE);
-// 		i++;
-// 	}
-// 	return (FALSE);
-// }
 
 int	check_char(char **av)
 {

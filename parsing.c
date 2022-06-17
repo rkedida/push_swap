@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 13:54:52 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/17 01:51:04 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/17 17:11:27 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,8 @@ void	check_doubles(char **av, int ac, t_struct *head)
 		j = i + 1;
 		while (j < ac)
 		{
-			if (ft_strcmp(av[i], av[j]) == 0)
+			if ((ft_strcmp(av[i], av[j]) == 0)
+				|| (ft_atoi(av[i]) == ft_atoi(av[j])))
 				error(head, 1);
 			j++;
 		}
@@ -91,6 +92,7 @@ int	parsing(t_struct *data, int ac, char **av)
 	i = 0;
 	j = 0;
 	check_doubles(av, ac, data);
+	printf("av[0] = %s   %s\n", av[0], av[1]);
 	tmp = malloc((sizeof(int) * ac));
 	while (i < ac)
 	{
