@@ -6,101 +6,85 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 02:49:55 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/15 04:40:54 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/17 06:33:22 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-char	*ft_next_line(char *protect)
+char	*get_next_line(int fd)
 {
-	int		i;
-	char	*s;
+	static t_lists	f;
 
-	i = 0;
-	if (!protect[i])
-		return (NULL);
-	while (protect[i] && protect[i] != '\n')
-		i++;
-	s = (char *)malloc((i + 2) * sizeof(char));
-	if (!s)
-		return (NULL);
-	i = 0;
-	while (protect[i] && protect[i] != '\n')
+	init_rest(&f);
+	f.number = 1;
+	while (f.number && f.number % 1 == 0
+		&& (!(ft_strchr_gnl(f.line, '\n'))))
 	{
-		s[i] = protect[i];
-		i++;
+		f.number = read(fd, f.buff, 1);
+		if ((f.number == 0 && (!*f.line)) || f.number == -1)
+		{
+			if (f.line || f.number == -1)
+				free(f.line);
+			return (NULL);
+		}
+		f.buff[f.number] = '\0';
+		f.line = ft_strjoin_gnl(f.line, f.buff);
 	}
-	if (protect[i] == '\n')
-	{
-		s[i] = protect[i];
-		i++;
-	}
-	s[i] = '\0';
-	return (s);
+	ft_saverest(&f);
+	ft_returnline(&f);
+	return (f.line);
 }
 
-char	*ft_protect(char *protect)
+void	ft_saverest(t_lists *f)
 {
 	int		i;
 	int		j;
-	char	*p;
 
 	i = 0;
-	while (protect[i] && protect[i] != '\n')
-		i++;
-	if (!protect[i])
-	{
-		free(protect);
-		return (NULL);
-	}
-	p = (char *)malloc(sizeof(char) * (ft_strlen1(protect) - i + 1));
-	if (!p)
-		return (NULL);
-	i++;
 	j = 0;
-	while (protect[i])
-		p[j++] = protect[i++];
-	p[j] = '\0';
-	free(protect);
-	return (p);
+	if (f->line == NULL)
+		return ;
+	while (f->line[j] != '\0')
+		j++;
+	while (f->line[i] != '\n' && f->line[i] != '\0')
+		i++;
+	if (i != j)
+		f->rest = ft_substr_gnl(f->line, i + 1, j - (i + 1));
+	else
+		f->rest = ft_strdup_gnl("");
 }
 
-char	*ft_read_protect(int fd, char *protect)
+void	init_rest(t_lists *f)
+{
+	if (f->rest)
+	{
+		f->line = ft_strdup_gnl(f->rest);
+		free (f->rest);
+	}
+	else
+		f->line = ft_strdup_gnl("");
+}
+
+void	ft_returnline(t_lists *f)
 {
 	int		i;
-	char	*buff;
+	int		j;
+	char	*ret;
 
-	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buff)
-		return (NULL);
-	i = 1;
-	while (!ft_strchr(protect, '\n') && i != 0)
+	i = 0;
+	j = 0;
+	if (f->line == NULL)
+		return ;
+	while (f->line[j] != '\0')
+		j++;
+	while (f->line[i] != '\n' && f->line[i] != '\0')
+		i++;
+	if (i != j)
 	{
-		i = read(fd, buff, BUFFER_SIZE);
-		if (i == -1)
-		{
-			free(buff);
-			return (NULL);
-		}
-		buff[i] = '\0';
-		protect = ft_strjoin(protect, buff);
+		ret = ft_substr_gnl(f->line, 0, i + 1);
+		free (f->line);
+		f->line = ft_strdup_gnl(ret);
+		free (ret);
 	}
-	free(buff);
-	return (protect);
-}
-
-char	*get_next_line(int fd)
-{
-	static char	*protect[1024];
-	char		*l;
-
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (0);
-	protect[fd] = ft_read_protect(fd, protect[fd]);
-	if (!protect[fd])
-		return (NULL);
-	l = ft_next_line(protect[fd]);
-	protect[fd] = ft_protect(protect[fd]);
-	return (l);
 }

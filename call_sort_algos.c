@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 01:32:30 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/16 04:20:10 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/16 19:00:19 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void	call_algo_5n(t_struct *head, int size)
 		return ;
 	if (size == 5)
 		sorting_algo_5n(head);
-	printer(head->l_a);
 }
 
 void	call_sorting_algo(t_struct *head)

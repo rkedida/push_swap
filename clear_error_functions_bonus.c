@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clear_error_functions.c                            :+:      :+:    :+:   */
+/*   clear_error_functions_bonus.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 21:31:40 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/17 02:30:48 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/17 03:09:30 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
 void	ft_free_node(t_list **node)
 {

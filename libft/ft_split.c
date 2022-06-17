@@ -6,14 +6,13 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 13:11:01 by rkedida           #+#    #+#             */
-/*   Updated: 2022/04/04 02:10:45 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/17 01:50:13 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char
-	*ft_strcpyt(char *str, char c)
+static char	*ft_strcpyt(char *str, char c)
 {
 	char	*dest;
 	int		i;

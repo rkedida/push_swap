@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 01:29:25 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/16 04:18:10 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/17 02:06:21 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,5 @@ void	sorting_part(t_struct *head, t_sort *sort, t_struct tmp)
 			tmp.l_a = tmp.l_a->next;
 		sorting_part_4(head, sort, tmp);
 	}
+	free(sort);
 }
