@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 21:18:02 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/19 03:06:33 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/19 20:03:51 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ int	main(int ac, char **av)
 	char		*str;
 
 	type = malloc(sizeof(t_struct));
+	if (ac == 1)
+		free(type);
 	if (ac > 1)
 	{
 		if (check_char(av) == FALSE)
