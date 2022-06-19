@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 13:54:52 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/17 17:40:45 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/19 03:05:42 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	check_doubles(char **av, int ac, t_struct *head)
 		while (j < ac)
 		{
 			if ((ft_strcmp(av[i], av[j]) == 0)
-				|| (ft_atoi(av[i]) == ft_atoi(av[j])))
+				|| (mod_atoi(av[i], head) == mod_atoi(av[j], head)))
 				error(head, 1);
 			j++;
 		}
@@ -95,12 +95,12 @@ int	parsing(t_struct *data, int ac, char **av)
 	tmp = malloc((sizeof(int) * ac));
 	while (i < ac)
 	{
+		if (string_has_only_number(av[i]) == FALSE)
+			error(data, 1);
 		if (!ft_isdigit(av[i][j]) && av[i][j] != '+'
 				&& av[i][j] != '-')
 			error(data, 1);
 		tmp[i] = mod_atoi(av[i], data);
-		if (tmp[i] == 0 && ft_strlen(av[i]) != 1)
-			return (0);
 		i++;
 	}
 	data->max_size = ac;

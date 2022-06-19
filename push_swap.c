@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 02:47:51 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/17 17:48:44 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/19 03:06:42 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(int ac, char **av)
 		if (check_char(av) == FALSE)
 			error(type, 1);
 		str = parseme(av, ac);
+		check_string(str, type);
 		strs = ft_split(str, ' ');
 		if (!parsing(type, ft_get_nb_strs(str, ' '), strs))
 			error(type, 1);

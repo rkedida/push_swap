@@ -6,34 +6,48 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 08:39:21 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/17 06:54:00 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/19 03:04:45 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-void	helper_atoi(int *i, int *n, char *s, t_struct *head)
+void	check_string(char *str, t_struct *type)
 {
-	while (*s == '-' || *s == '+')
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (*s == '-')
-			(*n) = -(*n);
-		if (*s == '-' && *s++ == '\0')
-			error(head, 1);
-		(*i)++;
-		(*s)++;
+		if ((str[i] == '-' || str[i] == '+') && !ft_isdigit(str[i + 1]))
+			error(type, 1);
+		i++;
 	}
 }
 
-void	helper_atoi_2(char *str, int *i, t_struct *head)
+int	string_has_only_number(const char *str)
 {
-	if ((str[*i] == '-' || str[*i] == '+') && !ft_isdigit(str[*i]))
-		error(head, 1);
+	int	i;
+
+	i = 0;
+	if (str[i] == '-')
+		i++;
+	while (str[i] != '\0')
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (FALSE);
+		i++;
+	}
+	return (TRUE);
 }
 
-void	helper_atoi_3(char *str, int *i, t_struct *head)
+void	helper_atoi(int *i, int *n, char *s, t_struct *head)
 {
-	if (!ft_isdigit(str[*i]) && str[*i] == '-')
+	if (*s == '-' || *s == '+')
+		(*i)++;
+	if (*s == '-')
+		(*n) = -(*n);
+	if (*s == '-' && *s++ == '\0')
 		error(head, 1);
 }
 
@@ -50,7 +64,6 @@ int	mod_atoi(char *str, t_struct *head)
 		|| str[i] == '\t' || str[i] == '\n' || str[i] == '\r')
 			i++;
 	helper_atoi(&i, &n, &str[i], head);
-	helper_atoi_2(&str[i], &i, head);
 	while (ft_isdigit(str[i]))
 	{
 		res *= 10;
@@ -60,7 +73,6 @@ int	mod_atoi(char *str, t_struct *head)
 			|| (n == -1 && res * n < -2147483648))
 			error(head, 1);
 	}
-	helper_atoi_3(str, &i, head);
 	if (n == -1)
 		return ((int)(res * n));
 	return ((int)(res * n));

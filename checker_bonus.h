@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 03:00:38 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/17 17:43:30 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/19 02:35:03 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ void			deletestr(char	**a);
 
 // functions in parsing_utils_bonus.c
 
+void			check_string(char *str, t_struct *type);
+int				string_has_only_number(const char *str);
 void			helper_atoi(int *i, int *n, char *s, t_struct *head);
-void			helper_atoi_2(char *str, int *i, t_struct *head);
-void			helper_atoi_3(char *str, int *i, t_struct *head);
 int				mod_atoi(char *str, t_struct *head);
 int				ft_strcmp(char *s1, char *s2);
 
