@@ -6,7 +6,7 @@
 /*   By: rkedida <rkedida@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 01:06:34 by rkedida           #+#    #+#             */
-/*   Updated: 2022/06/16 04:18:24 by rkedida          ###   ########.fr       */
+/*   Updated: 2022/06/22 18:27:28 by rkedida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ t_sort	*init_stack_chunks(t_struct *head, t_sort *sort)
 		sort->j = sort->total / 5;
 		sort->l = 5;
 	}
-	else if (total > 50)
+	else if (total <= 250)
 	{
 		sort->j = sort->total / 11;
 		sort->l = 11;
 	}
-	else if (total >= 250)
+	else if (total > 250)
 	{
 		sort->j = sort->total / 19;
 		sort->l = 19;
