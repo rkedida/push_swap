@@ -75,7 +75,7 @@ To test your program, you can use the provided checker program.
 This program will validate whether the instructions output by your push_swap program are correctly sorting the list.
 
 ```sh
-./push_swap [List of Integers] | ./checker [Same List of Integers]
+./push_swap [List of Integers] | ./checker_Mac [Same List of Integers]
 ```
 
 ## Contributing
