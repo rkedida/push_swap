@@ -70,9 +70,9 @@ rrr: rra and rrb at the same time.
 
 ### Testing
 
-To test your program, you can use the provided checker program.
+To test the program, you can use the provided checker program.
 
-This program will validate whether the instructions output by your push_swap program are correctly sorting the list.
+This program will validate whether the instructions output by the push_swap program are correctly sorting the list.
 
 ```sh
 ./push_swap [List of Integers] | ./checker_Mac [Same List of Integers]
